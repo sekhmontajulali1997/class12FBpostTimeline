@@ -13,16 +13,17 @@ let content= '';
 
 if (allPosts.length > 0) {
 
-  allPosts.map((item, index) =>{
+  allPosts.reverse().map((item, index) =>{
 
+    
      content += `
   
      <div class="user-post">
      <div class="user-post-header">
        <div class="post-info">
-         <img src="${item.Athourimage}" alt="" />
+         <img src="${item.AthourImage}" alt="" />
          <div class="user-details">
-           <a class="author" href="#">${item.Athourname}</a>
+           <a class="author" href="#">${item.AthourName}</a>
            <span
              >10m
              <svg
@@ -58,7 +59,7 @@ if (allPosts.length > 0) {
      <div class="post-body">
        <div class="post-content">
          <p>
-           ${item.postcontent ? item.postcontent : '' }
+           ${item.Postcontent ? item.Postcontent : '' }
          </p>
        </div>
      </div>
@@ -262,6 +263,7 @@ e.preventDefault();
 
 const formdataa = new FormData(e.target);
 const objectconvertb = Object.fromEntries(formdataa);
+console.log(objectconvertb);
 
 if (!objectconvertb.Athourname || !objectconvertb.Athourimage) {
   alert('first 2 fileds are Requerd')
